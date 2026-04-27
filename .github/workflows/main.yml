@@ -9,8 +9,6 @@ jobs:
       - uses: actions/checkout@v6
       - name: setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - name: install depencies
         run: pnpm install --frozen-lockfile
       - name: build application for cloudflare workers
