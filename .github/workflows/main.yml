@@ -15,6 +15,6 @@ jobs:
       - run: ls -la
       - run: pnpm install
       - run: pnpm build
-      - run: wrangler deploy --config ./dist/server/wrangler.json --project-name "citadel-${{ github.ref_name }}"
+      - run: wrangler deploy --config ./dist/server/wrangler.json --name "citadel-${{ github.ref_name }}"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
