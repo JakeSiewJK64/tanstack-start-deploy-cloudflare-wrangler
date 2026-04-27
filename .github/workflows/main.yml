@@ -13,6 +13,7 @@ jobs:
           node-version: "25"
       - run: pnpm add -g wrangler
       - run: ls -la
+      - run: pnpm install
       - run: pnpm build
       - run: wrangler deploy --config ./dist/server/wrangler.json
         env:
