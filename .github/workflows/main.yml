@@ -7,9 +7,19 @@ jobs:
     name: deploy
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-            node-version: '25'
+          version: 10
+      - name: setup node
+        uses: pnpm/setup-node@v4
+        with:
+          version: 20
+          cache: "pnpm"
+      - name: install depencies
+        run: pnpm install --frozen-lockfile
+      - name: build application for cloudflare workers
+        run: pnpm build
       - run: npm install -g wrangler
       - run: ls -la
       - run: wrangler deploy --config ./dist/server/wrangler.json
