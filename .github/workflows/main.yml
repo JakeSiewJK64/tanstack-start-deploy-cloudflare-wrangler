@@ -7,11 +7,10 @@ jobs:
     name: deploy
     steps:
       - uses: actions/checkout@v6
-      - name: Deploy to Cloudflare Workers with Wrangler
-        id: deploy
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build and Deploy
         uses: cloudflare/wrangler-action@v3.15.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          wranglerConfigPath: ./wrangler.jsonc
-      - name: print pages-deployment-alias-url
-        run: echo ${{ steps.deploy.outputs.deployment-url }}
+          command: deploy
