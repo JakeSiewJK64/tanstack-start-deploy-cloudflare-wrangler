@@ -11,11 +11,7 @@ export default defineConfig({
   plugins: [
     tsConfigPaths(),
     tanstackStart(),
-    nitro({
-      output: {
-        dir: "app/dist",
-      },
-    }),
+    nitro(),
     // react's vite plugin must come after start's vite plugin
     viteReact(),
   ],
