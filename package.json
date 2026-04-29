@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "start": "node .output/server/index.mjs",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types"
