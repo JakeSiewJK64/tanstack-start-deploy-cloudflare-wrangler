@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   return (
     <div>
-      <h1>Hello</h1>
+      <h1>Hello 2</h1>
       <p>To get started, please visit any of the following links:</p>
       <ul>
         <li>
